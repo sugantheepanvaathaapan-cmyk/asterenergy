@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dela din feedback | AsterEnergy UF</title>
+    <link rel="icon" type="image/jpeg" href="assets_logo.png.jpg" />
+    <link rel="apple-touch-icon" href="assets_logo.png.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="feedback-page">
+    <header class="hero feedback-hero">
+      <nav class="nav">
+        <div class="logo-group">
+          <img src="assets_logo.png.jpg" alt="AsterEnergy UF logo" />
+          <div>
+            <span class="brand-name">AsterEnergy UF</span>
+            <small>Sikta mot stjärnorna</small>
+          </div>
+        </div>
+        <a class="btn btn-ghost" href="index.html">Tillbaka</a>
+      </nav>
+      <div class="feedback-hero-content">
+        <p class="eyebrow">Feedback</p>
+        <h1>Dela din upplevelse</h1>
+        <p class="lead">
+          Din åsikt betyder allt för oss. Hjälp oss att växa genom att dela din
+          upplevelse av Peach Edition.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section feedback-section">
+        <div class="feedback-container">
+          <!-- 
+            FÖR ATT ÄNDRA E-POSTADRESS:
+            1. Skapa ett nytt formulär på formspree.io
+            2. Lägg till vaathaapan@icloud.com (eller annan e-post) som mottagare
+            3. Kopiera Form ID och ersätt "xovgwolg" nedan
+          -->
+          <form id="feedback-form" action="https://formspree.io/f/xovgwolg" method="POST" class="feedback-form">
+            <input type="hidden" name="_next" value="feedback-tack.html" />
+            <input type="hidden" name="_subject" value="Ny feedback från AsterEnergy UF" />
+            <input type="hidden" name="_replyto" value="vaathaapan@icloud.com" />
+            <input type="hidden" name="_replyto" id="feedback-email-field" />
+            <p class="hidden-field">
+              <label>
+                <input name="_gotcha" tabindex="-1" autocomplete="off" />
+              </label>
+            </p>
+
+            <div class="feedback-rating-section">
+              <label class="feedback-label">Hur skulle du betygsätta Peach Edition?</label>
+              <div class="star-rating" id="star-rating">
+                <button type="button" class="star" data-rating="1" aria-label="1 stjärna">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button type="button" class="star" data-rating="2" aria-label="2 stjärnor">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button type="button" class="star" data-rating="3" aria-label="3 stjärnor">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button type="button" class="star" data-rating="4" aria-label="4 stjärnor">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button type="button" class="star" data-rating="5" aria-label="5 stjärnor">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <input type="hidden" name="rating" id="rating-value" value="" required />
+              <p class="rating-hint" id="rating-hint">Välj ditt betyg</p>
+            </div>
+
+            <div class="feedback-fields">
+              <label class="feedback-label">
+                Namn
+                <input type="text" name="name" placeholder="Ditt namn" />
+              </label>
+
+              <label class="feedback-label">
+                E-post
+                <input type="email" name="email" id="feedback-email" placeholder="namn@example.com" />
+              </label>
+
+              <label class="feedback-label">
+                Vad tyckte du om smaken?
+                <textarea name="taste" rows="3" placeholder="Berätta om smaken, konsistensen och din första reaktion..."></textarea>
+              </label>
+
+              <label class="feedback-label">
+                Hur kändes energin?
+                <textarea name="energy" rows="3" placeholder="Beskriv hur energin kändes, när den kickade in och hur länge den varade..."></textarea>
+              </label>
+
+              <label class="feedback-label">
+                Ytterligare kommentarer
+                <textarea name="comments" rows="4" placeholder="Delar du gärna med dig av något annat? Tips, förbättringsförslag eller vad du skulle vilja se härnäst?"></textarea>
+              </label>
+            </div>
+
+            <div class="feedback-actions">
+              <button type="submit" class="btn btn-primary" id="submit-feedback">
+                Skicka feedback
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 AsterEnergy UF — VRG Sundbyberg</p>
+      <p>"Sikta för stjärnorna"</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Star rating functionality
+      const stars = document.querySelectorAll('.star');
+      const ratingValue = document.getElementById('rating-value');
+      const ratingHint = document.getElementById('rating-hint');
+      const feedbackForm = document.getElementById('feedback-form');
+      const feedbackEmail = document.getElementById('feedback-email');
+      const feedbackEmailField = document.getElementById('feedback-email-field');
+
+      const ratingTexts = {
+        1: 'Mycket missnöjd',
+        2: 'Missnöjd',
+        3: 'Nöjd',
+        4: 'Mycket nöjd',
+        5: 'Utmärkt!'
+      };
+
+      let selectedRating = 0;
+
+      stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+          selectedRating = index + 1;
+          ratingValue.value = selectedRating;
+          updateStars();
+          ratingHint.textContent = ratingTexts[selectedRating];
+        });
+
+        star.addEventListener('mouseenter', () => {
+          const hoverRating = index + 1;
+          highlightStars(hoverRating);
+        });
+      });
+
+      document.getElementById('star-rating').addEventListener('mouseleave', () => {
+        updateStars();
+      });
+
+      function highlightStars(rating) {
+        stars.forEach((star, index) => {
+          if (index < rating) {
+            star.classList.add('active', 'hover');
+          } else {
+            star.classList.remove('active', 'hover');
+          }
+        });
+      }
+
+      function updateStars() {
+        stars.forEach((star, index) => {
+          if (index < selectedRating) {
+            star.classList.add('active');
+          } else {
+            star.classList.remove('active');
+          }
+        });
+      }
+
+      // Sync email field
+      feedbackEmail.addEventListener('input', () => {
+        feedbackEmailField.value = feedbackEmail.value;
+      });
+
+      // Form validation
+      feedbackForm.addEventListener('submit', (e) => {
+        if (!ratingValue.value) {
+          e.preventDefault();
+          ratingHint.textContent = 'Vänligen välj ett betyg';
+          ratingHint.style.color = 'var(--peach)';
+          return false;
+        }
+      });
+    </script>
+  </body>
+</html>
+
