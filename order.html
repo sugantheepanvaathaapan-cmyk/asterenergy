@@ -54,19 +54,31 @@
               slutför beställningen här på sidan och blir sedan kontaktad via
               e-post med betalnings- och leveransinformation.
             </p>
+            <!-- 
+              INSTRUKTIONER FÖR FORMSPREE:
+              1. Gå till https://formspree.io och skapa ett GRATIS konto
+              2. Klicka "New Form" → välj "Email notifications"
+              3. Kopiera din Form ID (ser ut som: xpzgkqyz)
+              4. Ersätt "YOUR_FORM_ID" nedan med din Form ID
+              5. Lägg till din e-post (Aster.energy@outlook.com) i Formspree-inställningarna
+              
+              Formuläret fungerar redan nu och visar bekräftelsesidan, 
+              men du måste konfigurera Formspree för att få e-postmeddelanden.
+            -->
             <form
+              id="order-form"
               name="asterenergy-order"
               method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
+              action="https://formspree.io/f/YOUR_FORM_ID"
               class="order-form"
-              action="tack.html"
             >
-              <input type="hidden" name="form-name" value="asterenergy-order" />
+              <input type="hidden" name="_subject" value="Ny beställning från AsterEnergy UF" />
+              <input type="hidden" name="_next" value="tack.html" />
+              <input type="hidden" name="_format" value="plain" />
               <p class="hidden-field">
                 <label>
                   Lämna detta fält tomt
-                  <input name="bot-field" />
+                  <input name="_gotcha" tabindex="-1" autocomplete="off" />
                 </label>
               </p>
 
@@ -79,6 +91,7 @@
                     value="Peach Edition – 180 mg koffein, sockerfri"
                     checked
                   />
+                  <img src="assets_logo.png.jpg" alt="AsterEnergy logo" class="product-logo" />
                   <div>
                     <span>Peach Edition</span>
                     <p>Sockerfri energidryck med 180 mg koffein och B-vitaminer.</p>
