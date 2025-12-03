@@ -141,6 +141,13 @@ section {
   max-width: 520px;
 }
 
+.feedback-hero-content .lead {
+  max-width: 100%;
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
@@ -682,6 +689,9 @@ section {
 
 .feedback-hero-content .eyebrow {
   color: var(--peach);
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .feedback-hero-content h1 {
@@ -689,7 +699,7 @@ section {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 1rem 0;
+  margin: 1rem auto;
   color: var(--text);
   text-align: center;
   width: 100%;
@@ -699,9 +709,10 @@ section {
   color: var(--muted);
   font-size: 1.2rem;
   line-height: 1.6;
-  text-align: center;
-  max-width: 100%;
+  text-align: center !important;
   margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
 }
 
 .success-icon {
