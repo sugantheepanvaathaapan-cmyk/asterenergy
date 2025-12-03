@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beställ Peach Edition | AsterEnergy UF</title>
+    <link rel="icon" type="image/jpeg" href="assets_logo.png.jpg" />
+    <link rel="apple-touch-icon" href="assets_logo.png.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -54,30 +56,16 @@
               slutför beställningen här på sidan och blir sedan kontaktad via
               e-post med betalnings- och leveransinformation.
             </p>
-            <!-- 
-              INSTRUKTIONER FÖR FORMSPREE:
-              1. Gå till https://formspree.io och skapa ett GRATIS konto
-              2. Klicka "New Form" → välj "Email notifications"
-              3. Kopiera din Form ID (ser ut som: xpzgkqyz)
-              4. Ersätt "YOUR_FORM_ID" nedan med din Form ID
-              5. Lägg till din e-post (Aster.energy@outlook.com) i Formspree-inställningarna
-              
-              Formuläret fungerar redan nu och visar bekräftelsesidan, 
-              men du måste konfigurera Formspree för att få e-postmeddelanden.
-            -->
             <form
               id="order-form"
-              name="asterenergy-order"
+              action="https://formspree.io/f/xovgwolg"
               method="POST"
-              action="https://formspree.io/f/YOUR_FORM_ID"
               class="order-form"
             >
-              <input type="hidden" name="_subject" value="Ny beställning från AsterEnergy UF" />
               <input type="hidden" name="_next" value="tack.html" />
-              <input type="hidden" name="_format" value="plain" />
+              <input type="hidden" name="_subject" value="Ny beställning från AsterEnergy UF" />
               <p class="hidden-field">
                 <label>
-                  Lämna detta fält tomt
                   <input name="_gotcha" tabindex="-1" autocomplete="off" />
                 </label>
               </p>
