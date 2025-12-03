@@ -67,16 +67,72 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const orderForm = document.querySelector("#order-form");
 if (orderForm) {
   orderForm.addEventListener("submit", async (e) => {
-    // If Formspree ID is still placeholder, just redirect to confirmation
-    const formAction = orderForm.getAttribute("action");
-    if (formAction && formAction.includes("YOUR_FORM_ID")) {
-      e.preventDefault();
-      // Still submit the form data but redirect immediately
-      window.location.href = "tack.html";
-      return;
+    // Get the redirect URL from the form
+    const nextInput = orderForm.querySelector('input[name="_next"]');
+    const redirectUrl = nextInput ? nextInput.value : 'tack.html';
+    
+    // Submit form via fetch to avoid page navigation
+    e.preventDefault();
+    
+    const formData = new FormData(orderForm);
+    
+    try {
+      const response = await fetch(orderForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Success - redirect to thank you page
+        window.location.href = redirectUrl;
+      } else {
+        // Error - still redirect but show error message
+        alert('Något gick fel. Du kommer att omdirigeras...');
+        window.location.href = redirectUrl;
+      }
+    } catch (error) {
+      // Network error - redirect anyway
+      window.location.href = redirectUrl;
     }
-    // If Formspree is configured, let it handle normally
-    // Formspree will redirect to tack.html automatically via _next parameter
+  });
+}
+
+// Handle feedback form submission
+const feedbackForm = document.querySelector("#feedback-form");
+if (feedbackForm) {
+  feedbackForm.addEventListener("submit", async (e) => {
+    const nextInput = feedbackForm.querySelector('input[name="_next"]');
+    const redirectUrl = nextInput ? nextInput.value : 'feedback-tack.html';
+    
+    // Submit form via fetch to avoid page navigation
+    e.preventDefault();
+    
+    const formData = new FormData(feedbackForm);
+    
+    try {
+      const response = await fetch(feedbackForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Success - redirect to thank you page
+        window.location.href = redirectUrl;
+      } else {
+        // Error - still redirect but show error message
+        alert('Något gick fel. Du kommer att omdirigeras...');
+        window.location.href = redirectUrl;
+      }
+    } catch (error) {
+      // Network error - redirect anyway
+      window.location.href = redirectUrl;
+    }
   });
 }
 
