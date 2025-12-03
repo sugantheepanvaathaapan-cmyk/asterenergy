@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beställ Peach Edition | AsterEnergy UF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="order-page">
+    <header class="hero order-hero">
+      <nav class="nav">
+        <div class="logo-group">
+          <img src="assets_logo.png.jpg" alt="AsterEnergy UF logo" />
+          <div>
+            <span class="brand-name">AsterEnergy UF</span>
+            <small>Sikta mot stjärnorna</small>
+          </div>
+        </div>
+        <button class="nav-toggle" aria-label="Växla meny">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Hem</a></li>
+          <li><a href="index.html#product">Produkt</a></li>
+          <li><a href="index.html#sustainability">Hållbarhet</a></li>
+          <li><a href="index.html#market">Marknad</a></li>
+          <li><a class="btn btn-outline" href="index.html#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="order-hero-content">
+        <p class="eyebrow">Beställning</p>
+        <h1>Reservera Peach Edition</h1>
+        <p class="lead">
+          Fyll i uppgifterna nedan så genererar vi ett e-postutkast till
+          AsterEnergy-teamet. Vi återkopplar inom 24 timmar med bekräftelse,
+          betalningsinstruktioner och leveransinformation.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section order-section">
+        <div class="order-grid">
+          <div>
+            <h2>Din beställning</h2>
+            <p>
+              Välj Peach Edition, ange antal burkar och dina uppgifter. Du
+              slutför beställningen här på sidan och blir sedan kontaktad via
+              e-post med betalnings- och leveransinformation.
+            </p>
+            <form
+              name="asterenergy-order"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              class="order-form"
+              action="tack.html"
+            >
+              <input type="hidden" name="form-name" value="asterenergy-order" />
+              <p class="hidden-field">
+                <label>
+                  Lämna detta fält tomt
+                  <input name="bot-field" />
+                </label>
+              </p>
+
+              <div class="product-chooser">
+                <h3>Produkt</h3>
+                <label class="product-option">
+                  <input
+                    type="radio"
+                    name="product"
+                    value="Peach Edition – 180 mg koffein, sockerfri"
+                    checked
+                  />
+                  <div>
+                    <span>Peach Edition</span>
+                    <p>Sockerfri energidryck med 180 mg koffein och B-vitaminer.</p>
+                  </div>
+                  <span class="product-price">18–20 SEK / burk</span>
+                </label>
+              </div>
+
+              <label>
+                Antal burkar *
+                <input
+                  type="number"
+                  name="quantity"
+                  min="1"
+                  step="1"
+                  placeholder="Till exempel 24"
+                  required
+                />
+              </label>
+
+              <div class="order-details-grid">
+                <label>
+                  Namn *
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Ditt fullständiga namn"
+                    required
+                  />
+                </label>
+                <label>
+                  E-post *
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="namn@example.com"
+                    required
+                  />
+                </label>
+                <label>
+                  Telefon
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+46..."
+                  />
+                </label>
+                <label>
+                  Ort
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="Till exempel Stockholm"
+                  />
+                </label>
+              </div>
+
+              <label>
+                Kommentarer eller leveransönskemål
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Berätta kort om event, leveransadress eller andra önskemål"
+                ></textarea>
+              </label>
+
+              <p class="form-hint">
+                Genom att skicka beställningen godkänner du att vi kontaktar dig
+                via e‑post med bekräftelse och betalningsinformation.
+              </p>
+
+              <div class="order-form-actions">
+                <button type="submit" class="btn btn-primary">
+                  Slutför beställning
+                </button>
+                <a class="btn btn-ghost" href="index.html">Tillbaka till startsidan</a>
+              </div>
+            </form>
+          </div>
+          <aside class="order-summary">
+            <h3>Orderöversikt</h3>
+            <ul>
+              <li>Produkt: Peach Edition – sockerfri energidryck.</li>
+              <li>Prisnivå: 18–20 SEK per burk (beroende på volym och event).</li>
+              <li>Leverans: upphämtning i Stockholm eller enligt överenskommelse.</li>
+            </ul>
+            <div class="order-meta">
+              <p><strong>Steg 1:</strong> Skicka in beställningen här på sidan.</p>
+              <p><strong>Steg 2:</strong> Du får ett bekräftelsemejl från AsterEnergy UF.</p>
+              <p><strong>Steg 3:</strong> Betalning och leverans planeras tillsammans med dig.</p>
+            </div>
+            <p class="note">
+              När du har slutfört beställningen visas en bekräftelse på skärmen:
+              <em>“Din beställning är mottagen – du blir kontaktad via e‑post.”</em>
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <section class="section contact">
+      <div class="section-header">
+        <p class="eyebrow">Direktkontakt</p>
+        <h2>Behöver du hjälp snabbare?</h2>
+        <p class="lead">
+          Mejla oss på
+          <a href="mailto:Aster.energy@outlook.com">Aster.energy@outlook.com</a>
+          eller skicka DM på Instagram/TikTok så svarar vi så fort vi kan.
+        </p>
+      </div>
+      <div class="contact-card">
+        <div>
+          <h3>Socialt</h3>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+          </div>
+        </div>
+        <div>
+          <h3>UF-teamet</h3>
+          <p>Filip • Hamza • Vaathapaan</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 AsterEnergy UF — VRG Sundbyberg</p>
+      <p>“Sikta för stjärnorna”</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
