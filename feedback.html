@@ -48,8 +48,6 @@
           <form id="feedback-form" action="https://formspree.io/f/mkgdbdbe" method="POST" class="feedback-form">
             <input type="hidden" name="_next" value="feedback-tack.html" />
             <input type="hidden" name="_subject" value="Ny feedback från AsterEnergy UF" />
-            <input type="hidden" name="_replyto" value="vaathaapan@icloud.com" />
-            <input type="hidden" name="_replyto" id="feedback-email-field" />
             <p class="hidden-field">
               <label>
                 <input name="_gotcha" tabindex="-1" autocomplete="off" />
@@ -138,8 +136,6 @@
       const ratingValue = document.getElementById('rating-value');
       const ratingHint = document.getElementById('rating-hint');
       const feedbackForm = document.getElementById('feedback-form');
-      const feedbackEmail = document.getElementById('feedback-email');
-      const feedbackEmailField = document.getElementById('feedback-email-field');
 
       const ratingTexts = {
         1: 'Mycket missnöjd',
@@ -189,10 +185,6 @@
         });
       }
 
-      // Sync email field
-      feedbackEmail.addEventListener('input', () => {
-        feedbackEmailField.value = feedbackEmail.value;
-      });
 
       // Form validation
       feedbackForm.addEventListener('submit', (e) => {
